@@ -1,0 +1,5 @@
+tunnel: c32adc5b-0d12-4624-96c9-82c5b648e449
+    credentials-file: ./equipo-credentials.json
+    
+    ingress:
+      - service: http_status:404

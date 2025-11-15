@@ -1,0 +1,152 @@
+@if (isMobile) {
+<div class="relative inline-block">
+  <!-- EVA Robot -->
+  <div class="modelViewPort cursor-pointer" (click)="toggleTooltip()" [class.group]="!isMobile">
+    <div class="eva" id="evaRobot">
+      <div class="head" id="evaHead">
+        <div class="eyeChamber" id="eyeChamber">
+          <div class="eye" id="leftEye"></div>
+          <div class="eye" id="rightEye"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="hand"></div>
+        <div class="hand"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div class="absolute -ml-36 bottom-full left-1/2 -translate-x-1/2 mb-4 w-[280px] 
+           transition-all duration-500 ease-in-out" [ngClass]="{
+      'invisible opacity-0 translate-y-2': (isMobile && !tooltipVisible),
+      'visible opacity-100 translate-y-0': (isMobile && tooltipVisible)
+    }" [class.group-hover:visible]="!isMobile" [class.group-hover:opacity-100]="!isMobile"
+    [class.group-hover:translate-y-0]="!isMobile">
+    <div class="relative p-5 rounded-2xl bg-white/10 dark:bg-gray-900/60 
+             backdrop-blur-xl border border-white/20 shadow-2xl">
+      <!-- Header -->
+      <h3 class="text-base font-bold text-gray-900 dark:text-white text-center">
+        {{titulo}}
+      </h3>
+      <p class="text-gray-600 dark:text-gray-300 text-center mt-1 leading-relaxed"> {{descripcion}} </p>
+
+
+      <!-- Redes -->
+      <div class="flex justify-center gap-4 mt-4">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61579304398167" target="_blank"
+          class="p-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:scale-110 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M22 12a10 10 0 10-11.6 9.9v-7H8v-3h2.4V9.5A3.4 3.4 0 0113.9 6h2.6v3h-2.6c-.4 0-.9.2-.9.9V12h3.4l-.5 3h-2.9v7A10 10 0 0022 12z" />
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/humani_bot/" target="_blank"
+          class="p-2 rounded-full bg-pink-500 hover:bg-pink-600 text-white shadow-md hover:scale-110 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.403a4.9 4.9 0 011.77 1.152 4.9 4.9 0 011.153 1.77c.163.457.349 1.257.403 2.427.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.427a4.9 4.9 0 01-1.153 1.77 4.9 4.9 0 01-1.77 1.153c-.457.163-1.257.349-2.427.403-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.427-.403a4.9 4.9 0 01-1.77-1.153 4.9 4.9 0 01-1.153-1.77c-.163-.457-.349-1.257-.403-2.427C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.427a4.9 4.9 0 011.153-1.77 4.9 4.9 0 011.77-1.153c.457-.163 1.257-.349 2.427-.403C8.416 2.212 8.8 2.2 12 2.2zm0 1.8c-3.153 0-3.522.012-4.762.07-.98.045-1.512.208-1.862.346-.468.18-.8.394-1.15.744-.35.35-.564.682-.744 1.15-.138.35-.301.882-.346 1.862-.058 1.24-.07 1.609-.07 4.762s.012 3.522.07 4.762c.045.98.208 1.512.346 1.862.18.468.394.8.744 1.15.35.35.682.564 1.15.744.35.138.882.301 1.862.346 1.24.058 1.609.07 4.762.07s3.522-.012 4.762-.07c.98-.045 1.512-.208 1.862-.346.468-.18.8-.394 1.15-.744.35-.35.564-.682.744-1.15.138-.35.301-.882.346-1.862.058-1.24.07-1.609.07-4.762s-.012-3.522-.07-4.762c-.045-.98-.208-1.512-.346-1.862a3.1 3.1 0 00-.744-1.15 3.1 3.1 0 00-1.15-.744c-.35-.138-.882-.301-1.862-.346-1.24-.058-1.609-.07-4.762-.07zm0 3.7a5.3 5.3 0 110 10.6 5.3 5.3 0 010-10.6zm0 8.7a3.4 3.4 0 100-6.8 3.4 3.4 0 000 6.8zm5.5-9.9a1.24 1.24 0 11-2.48 0 1.24 1.24 0 012.48 0z" />
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@humanibot" target="_blank"
+          class="p-2 rounded-full bg-black hover:bg-gray-800 text-white shadow-md hover:scale-110 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2h2.2a5.8 5.8 0 004.1 4.1V9a9.1 9.1 0 01-6.3-2.5v7.3a5.3 5.3 0 11-5.3-5.3c.3 0 .6 0 .9.1v2.3a2.9 2.9 0 102.1 2.8V2z" />
+          </svg>
+        </a>
+
+
+        <a href="https://wa.me/51934313363" target="_blank"
+          class="p-2 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-md hover:scale-110 transition">
+          <img width="20" height="20" src="img/wpp.png" alt="whatsapp--v1" />
+
+        </a>
+      </div>
+
+      <!-- Flecha tipo tooltip -->
+      <div class="absolute right-6 -bottom-2 w-4 h-4 bg-white/10 dark:bg-gray-900/60 
+               border-r border-b border-white/20 transform rotate-45 backdrop-blur-xl"></div>
+    </div>
+  </div>
+</div>
+
+}
+@else {<div class="relative group inline-block">
+  <!-- EVA Robot -->
+  <div class="modelViewPort cursor-pointer">
+    <div class="eva" id="evaRobot">
+      <div class="head" id="evaHead">
+        <div class="eyeChamber" id="eyeChamber">
+          <div class="eye" id="leftEye"></div>
+          <div class="eye" id="rightEye"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="hand"></div>
+        <div class="hand"></div>a
+      </div>
+    </div>
+  </div>
+
+  <!-- Card que aparece al hover -->
+  <div
+    class="absolute invisible -ml-36 opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-4 w-[280px] transition-all duration-500 ease-in-out z-50">
+    <div
+      class="relative p-5 rounded-2xl bg-white/10 dark:bg-gray-900/60 backdrop-blur-xl border border-white/20 shadow-2xl">
+      <!-- Header -->
+      <h3 class="text-base font-bold text-gray-900 dark:text-white text-center">
+        {{titulo}}
+      </h3>
+      <p class="text-gray-600 dark:text-gray-300 text-center mt-1 leading-relaxed" [innerHTML]="formattedMessage">
+      </p>
+
+
+      <!-- Redes -->
+      <div class="flex justify-center gap-4 mt-4">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61579304398167" target="_blank"
+          class="p-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:scale-110 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M22 12a10 10 0 10-11.6 9.9v-7H8v-3h2.4V9.5A3.4 3.4 0 0113.9 6h2.6v3h-2.6c-.4 0-.9.2-.9.9V12h3.4l-.5 3h-2.9v7A10 10 0 0022 12z" />
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/humani_bot/" target="_blank"
+          class="p-2 rounded-full bg-pink-500 hover:bg-pink-600 text-white shadow-md hover:scale-110 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.403a4.9 4.9 0 011.77 1.152 4.9 4.9 0 011.153 1.77c.163.457.349 1.257.403 2.427.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.427a4.9 4.9 0 01-1.153 1.77 4.9 4.9 0 01-1.77 1.153c-.457.163-1.257.349-2.427.403-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.427-.403a4.9 4.9 0 01-1.77-1.153 4.9 4.9 0 01-1.153-1.77c-.163-.457-.349-1.257-.403-2.427C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.427a4.9 4.9 0 011.153-1.77 4.9 4.9 0 011.77-1.153c.457-.163 1.257-.349 2.427-.403C8.416 2.212 8.8 2.2 12 2.2zm0 1.8c-3.153 0-3.522.012-4.762.07-.98.045-1.512.208-1.862.346-.468.18-.8.394-1.15.744-.35.35-.564.682-.744 1.15-.138.35-.301.882-.346 1.862-.058 1.24-.07 1.609-.07 4.762s.012 3.522.07 4.762c.045.98.208 1.512.346 1.862.18.468.394.8.744 1.15.35.35.682.564 1.15.744.35.138.882.301 1.862.346 1.24.058 1.609.07 4.762.07s3.522-.012 4.762-.07c.98-.045 1.512-.208 1.862-.346.468-.18.8-.394 1.15-.744.35-.35.564-.682.744-1.15.138-.35.301-.882.346-1.862.058-1.24.07-1.609.07-4.762s-.012-3.522-.07-4.762c-.045-.98-.208-1.512-.346-1.862a3.1 3.1 0 00-.744-1.15 3.1 3.1 0 00-1.15-.744c-.35-.138-.882-.301-1.862-.346-1.24-.058-1.609-.07-4.762-.07zm0 3.7a5.3 5.3 0 110 10.6 5.3 5.3 0 010-10.6zm0 8.7a3.4 3.4 0 100-6.8 3.4 3.4 0 000 6.8zm5.5-9.9a1.24 1.24 0 11-2.48 0 1.24 1.24 0 012.48 0z" />
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@humanibot" target="_blank"
+          class="p-2 rounded-full bg-black hover:bg-gray-800 text-white shadow-md hover:scale-110 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 2h2.2a5.8 5.8 0 004.1 4.1V9a9.1 9.1 0 01-6.3-2.5v7.3a5.3 5.3 0 11-5.3-5.3c.3 0 .6 0 .9.1v2.3a2.9 2.9 0 102.1 2.8V2z" />
+          </svg>
+        </a>
+
+        <a href="https://wa.me/51934313363" target="_blank"
+          class="p-2 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-md hover:scale-110 transition">
+          <img width="20" height="20" src="img/wpp.png" alt="whatsapp--v1" />
+
+        </a>
+      </div>
+
+      <!-- Flecha tipo tooltip -->
+      <div class="absolute right-6 -bottom-2 w-4 h-4 bg-white/10 dark:bg-gray-900/60 
+               border-r border-b border-white/20 transform rotate-45 backdrop-blur-xl"></div>
+    </div>
+  </div>
+</div>
+}

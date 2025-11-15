@@ -1,0 +1,34 @@
+<div class="flex flex-col gap-6">
+    <div>
+        <label class="block font-bold mb-3" for="name">Nombre Completo</label>
+        <input [(ngModel)]="modeloenvio.nombre" autofocus fluid id="name" pInputText required type="text" />
+    </div>
+    <div>
+        <label class="block font-bold mb-3" for="name">Usuario</label>
+        <input [(ngModel)]="modeloenvio.usuario" autofocus fluid id="name" pInputText required type="text" />
+    </div>
+
+    @if (this.datorecogidos?.operacion !== 'editar') {
+
+        <div>
+            <label class="block font-bold mb-3" for="name">Password</label>
+            <input [(ngModel)]="modeloenvio.password" autofocus fluid id="name" pInputText required type="text" />
+        </div>
+    }
+
+    <div>
+        <label class="block font-bold mb-3" for="name">Email</label>
+        <input [(ngModel)]="modeloenvio.email" autofocus fluid id="name" pInputText required type="text" />
+    </div>
+    <div class="text-end">
+        <p-button (click)="cerraMOdal()" icon="pi pi-times" label="Cancel" text />
+
+        @if (!loading) {
+        <p-button (click)="enviarDatos()" icon="pi pi-check" label="Guardar" />
+        } @else {
+        <p-button disabled icon="pi pi-check" label="Guardando....." />
+        }
+
+    </div>
+
+</div>

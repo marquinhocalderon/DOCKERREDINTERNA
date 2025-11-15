@@ -1,0 +1,61 @@
+<header class="py-5 px-6 mx-0 md:mx-12 lg:mx-20 lg:px-20 flex items-center justify-between relative lg:static">
+    <div class="flex items-center space-x-4 mt-1">
+        <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+            <a class="flex items-center" >
+                @if (isDarkTheme()) {
+                <img src="img/negro.png" alt="humanibot" class="w-12" />
+                } @else {
+                <img src="img/blanco.png" alt="humanibot" class="w-10" />
+                }
+            </a>
+        </div>
+        <a  class="text-3xl font-extrabold text-primary  titulo transition-colors">HumaniBot </a>
+        <span class="text-3xl titulo font-light text-primary transition-colors"> Académico</span>
+    </div>
+
+    <a pButton [text]="true" severity="secondary" [rounded]="true" pRipple class="lg:!hidden" pStyleClass="@next"
+        enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
+        <i class="pi pi-bars !text-2xl"></i>
+    </a>
+
+    <div
+        class="items-center ml-16 grow justify-between hidden lg:flex absolute lg:static w-full left-0 top-full px-12 lg:px-0 z-20 rounded-border   ">
+
+        <ul class="list-none p-0 m-0 flex lg:items-center select-none flex-col lg:flex-row cursor-pointer gap-8">
+            <li>
+                <a (click)="scrollTo('sobrenosotros')" pRipple
+                    class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
+                    <span>Sobre Nosotros</span>
+                </a>
+            </li>
+            <li>
+                <a (click)="scrollTo('servicios')" pRipple
+                    class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
+                    <span>Servicios</span>
+                </a>
+            </li>
+            <li>
+                <a (click)="scrollTo('elegirnos')" pRipple
+                    class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
+                    <span>¿Por qué elegirnos?</span>
+                </a>
+            </li>
+            <li>
+                <a (click)="scrollTo('beneficios')" pRipple
+                    class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
+                    <span>Beneficios</span>
+                </a>
+            </li>
+            <li>
+                <a (click)="scrollTo('contacto')" pRipple
+                    class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="flex border-t lg:border-t-0 border-surface py-4 lg:py-0 mt-4 lg:mt-0 gap-2">
+            <app-floating-configurator />
+        </div>
+    </div>
+</header>

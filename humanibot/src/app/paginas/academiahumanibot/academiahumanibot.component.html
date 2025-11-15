@@ -1,0 +1,32 @@
+<div class=" min-h-screen flex flex-col transition-colors duration-300
+    landing-wrapper overflow-hidden">
+    <!-- Header -->
+    <app-header></app-header>
+    <!-- Main Content -->
+    <app-main></app-main>
+
+    <!-- About Section -->
+    <app-abaut></app-abaut>
+
+    <!-- Section Servicios -->
+    <app-section-servicios></app-section-servicios>
+
+    <!-- Section Elegirnos -->
+    <app-section-elergirnos></app-section-elergirnos>
+
+    <!-- Section Beneficios -->
+    <app-section-beneficios></app-section-beneficios>
+
+    <!-- CTA -->
+    <app-cta></app-cta>
+
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+
+    <!-- Modal contactar -->
+    @if (modalService.modalVisible) {
+    <app-modal-contact></app-modal-contact>
+    }
+
+</div>

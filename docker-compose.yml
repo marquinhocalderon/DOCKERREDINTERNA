@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ./humanibot
+      dockerfile: Dockerfile
+    container_name: angular_frontend
+    ports:
+      - "80:80"
+    networks:
+      - internal_net
+    depends_on:
+      - backend
+    # Sin volúmenes: en producción NO se usa volumen para el código
+
+  backend:
+    build:
+      context: ./BACKEND_HUMANIZA
+      dockerfile: Dockerfile
+    container_name: nest_backend
+    expose:
+      - "3000"
+    env_file:
+      - ./BACKEND_HUMANIZA/.env
+    networks:
+      - internal_net
+
+    # ✔ ÚNICO volumen necesario: para archivos subidos por usuarios
+    volumes:
+      - backend_uploads:/app/uploads
+
+networks:
+  internal_net:
+    driver: bridge
+
+volumes:
+  backend_uploads:

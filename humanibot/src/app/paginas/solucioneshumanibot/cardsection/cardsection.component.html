@@ -1,0 +1,44 @@
+<section class="py-16"  id="servicios_solutions">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Título llamativo -->
+    <h2 class="titulo text-4xl md:text-5xl font-extrabold text-center mb-12 text-white animate-fadeIn">
+      Servicios
+    </h2>
+
+    <!-- Cards -->
+    <div class="flex flex-wrap justify-center gap-8">
+      <div #card
+           *ngFor="let servicio of servicios; let i = index"
+           class="service-card"
+           [ngClass]="{'visible': visibleCards[i]}">
+
+        <!-- Imagen de fondo -->
+        <img [src]="servicio.imagen" alt="{{servicio.titulo}}" class="card-img" />
+
+        <!-- Overlay de información -->
+        <div class="card-overlay">
+          <h3 class="text-xl font-bold mb-1 text-white text-center">
+            {{ servicio.titulo }} <span class="emoji"></span>
+          </h3>
+          <p class="text-gray-200 text-center text-sm mb-2 font-semibold">{{ servicio.beneficio }}</p>
+          <p class="text-gray-300 text-center text-sm mb-4">{{ servicio.descripcion }}</p>
+
+          <!-- Botón con URL -->
+          <a [routerLink]="servicio.urlInternal"
+             *ngIf="servicio.urlInternal"
+             class="cta-button">
+             Más Información
+          </a>
+
+<!--           <a [href]="servicio.urlExternal"
+             target="_blank"
+             rel="noopener noreferrer"
+             *ngIf="servicio.urlExternal"
+             class="cta-button">
+             Más Información
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

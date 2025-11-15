@@ -1,0 +1,57 @@
+<header id="hero"
+  class="relative flex items-center justify-center px-6 lg:px-20 overflow-hidden text-white"
+  style="height: calc(100vh - 6rem); 
+         background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                     radial-gradient(77.36% 256.97% at 77.36% 57.52%, rgb(20, 20, 20) 0%, rgb(50, 50, 50) 100%);
+         clip-path: ellipse(150% 87% at 93% 13%);"
+  aria-label="Humanibot - Humanizador de textos con IA">
+
+  <!-- Imagen como fondo -->
+
+
+  @if (isMobile) {
+      <img src="/img/portada.png" 
+       alt="Fondo Humanibot con inteligencia artificial" 
+       class="absolute top-0 left-0 w-full h-full object-cover z-0"
+       style="clip-path: ellipse(150% 87% at 93% 13%);" 
+       aria-hidden="true">
+  }
+  @else {
+      <video #videoPlayer autoplay muted  playsinline preload="auto"
+      class="absolute top-0 left-0 w-full h-full object-cover z-0"
+      style="clip-path: ellipse(150% 87% at 93% 13%);" 
+      aria-hidden="true" poster="/videos/poster.jpg">
+      <source src="/videos/principal.mp4" type="video/mp4" />
+      Tu navegador no soporta la etiqueta de video.
+  </video>
+  }
+
+  <!-- Contenido -->
+  <div class="relative z-10 flex flex-col items-center justify-end w-full h-full pb-16 text-center">
+
+    <!-- H1 solo SEO (oculto) -->
+    <h1 class="sr-only">
+      Humanibot - Humanizador de textos con inteligencia artificial
+    </h1>
+
+    <!-- H2 SEO oculto -->
+    <h2 class="sr-only">Convierte textos robóticos en lenguaje humano natural</h2>
+
+    <!-- Texto SEO extra oculto -->
+    <div class="sr-only">
+      <p>
+        Humanibot es un humanizador de IA que convierte textos artificiales en lenguaje humano.
+        Con nuestra inteligencia artificial avanzada puedes mejorar emails, redes sociales,
+        blogs y artículos digitales. Palabras clave: humanizador IA, transformar IA en humano,
+        textos naturales, mejorar comunicación digital.
+      </p>
+    </div>
+
+    <!-- Botón CTA centrado abajo -->
+    <a href="#pricing" aria-label="Probar Humanibot gratis, el humanizador de IA"
+      class="px-8 py-4 text-xl font-semibold bg-white text-black 
+             hover:bg-gray-200 transition-colors rounded-2xl shadow-xl max-lg:mb-5">
+      🚀 Probar ahora
+    </a>
+  </div>
+</header>

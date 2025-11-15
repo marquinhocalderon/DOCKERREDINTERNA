@@ -1,0 +1,8 @@
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1750px); } /* 250px * 7 imágenes */
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}

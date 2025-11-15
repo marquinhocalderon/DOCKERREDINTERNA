@@ -1,0 +1,25 @@
+
+
+
+.full-width-btn ::ng-deep button {
+  width: 100%;
+}
+
+
+/* Asegurar que el icono no tape el texto */
+.p-iconfield textarea {
+    padding-right: 4rem !important; /* más espacio a la derecha */
+    height: 100% !important;
+    min-height: 100% !important;
+    text-align: justify !important; /* Justifica el texto dentro del textarea */}
+
+/* Mover icono un poco más arriba y hacerlo clickeable */
+.p-inputicon {
+    font-size: 1.5rem;
+    top: 1.5rem !important; /* antes 1.5rem, así queda más arriba */
+    right: 0.75rem !important; /* lo acercamos un poco al borde */
+    transform: translateY(0) !important;
+    cursor: pointer;
+    
+}
+

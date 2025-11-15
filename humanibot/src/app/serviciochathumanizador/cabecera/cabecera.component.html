@@ -1,0 +1,62 @@
+<div class="layout-topbar dark:bg-gray-900" style="padding: 40px !important;">
+    <div class="layout-topbar-logo-container">
+            <div class="flex items-center space-x-4 mt-1">
+          <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+            <a class="flex items-center" href="/chat">
+              <ng-container *ngIf="darkTheme(); else lightLogo">
+                <img src="img/negro.png" alt="humanibot" class="w-12" />
+              </ng-container>
+              <ng-template #lightLogo>
+                <img src="img/blanco.png" alt="humanibot" class="w-10" />
+              </ng-template>
+            </a>
+          </div>
+          <a href="/chat" class="text-3xl font-extrabold text-primary max-lg:text-xl titulo transition-colors">HumaniBot</a>
+        </div>
+
+
+    </div>
+
+    <div class="layout-topbar-actions">
+        <div class="layout-config-menu">
+            <button type="button" class="layout-topbar-action" (click)="toggleDarkMode()">
+                <i
+                    [ngClass]="{ 'pi ': true, 'pi-moon': layoutService.isDarkTheme(), 'pi-sun': !layoutService.isDarkTheme() }"></i>
+            </button>
+            <div class="relative">
+                <button class="layout-topbar-action layout-topbar-action-highlight" pStyleClass="@next"
+                    enterFromClass="hidden" enterActiveClass="animate-scalein" leaveToClass="hidden"
+                    leaveActiveClass="animate-fadeout" [hideOnOutsideClick]="true">
+                    <i class="pi pi-palette"></i>
+                </button>
+                <app-configurator />
+            </div>
+        </div>
+
+        <button class="layout-topbar-menu-button layout-topbar-action" pStyleClass="@next" enterFromClass="hidden"
+            enterActiveClass="animate-scalein" leaveToClass="hidden" leaveActiveClass="animate-fadeout"
+            [hideOnOutsideClick]="true">
+            <i class="pi pi-ellipsis-v"></i>
+        </button>
+
+        <div class="layout-topbar-menu hidden lg:block">
+            <div class="layout-topbar-menu-content">
+                <p-tag [value]="(datosInfoUsuario?.Cuenta?.plan | uppercase)" />
+
+                <div class="max-lg:pointer-events-none">
+                    <p-menu #menu [model]="configuracion" [popup]="true"></p-menu>
+                    <button (click)="menu.toggle($event)" type="button" class="layout-topbar-action">
+                        <img [src]="datosInfoUsuario?.User?.avatar" class="w-9 h-9 rounded-full object-cover" />
+                        <span class="max-lg:ml-4">Perfil</span>
+                    </button>
+                </div>
+
+                <button pTooltip="Salir" tooltipPosition="bottom" (click)="cerrarSesion()" type="button"
+                    class="layout-topbar-action">
+                    <i class="pi pi-sign-out"></i>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

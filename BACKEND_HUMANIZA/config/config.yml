@@ -1,0 +1,6 @@
+tunnel: 9c245a67-a635-4c5a-ad43-e9db11415d05
+credentials-file: ./mouse-credentials.json
+
+ingress:
+
+  - service: http_status:404

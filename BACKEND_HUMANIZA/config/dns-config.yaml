@@ -1,0 +1,5 @@
+tunnel: c7738e22-e109-4867-bb56-3dfe01698294
+    credentials-file: ./dns-credentials.json
+    
+    ingress:
+      - service: http_status:404

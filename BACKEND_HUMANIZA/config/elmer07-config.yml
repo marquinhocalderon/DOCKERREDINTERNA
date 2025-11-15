@@ -1,0 +1,5 @@
+tunnel: 0ea21a38-ad8e-463c-9caf-918cd9c84419
+credentials-file: ./elmer07-credentials.json
+
+ingress:
+  - service: http_status:404

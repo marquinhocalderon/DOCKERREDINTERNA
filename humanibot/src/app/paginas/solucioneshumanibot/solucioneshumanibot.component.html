@@ -1,0 +1,26 @@
+<!-- Fondo Three.js fijo -->
+<div #canvasContainer class="fixed top-0 left-0 w-full h-full z-0 overflow-hidden">
+  <!-- El canvas se inyecta desde Three.js -->
+</div>
+
+<!-- Contenido principal sobre el fondo -->
+<div class="relative z-10 flex flex-col items-center justify-center">
+
+  <!-- Hero -->
+  <app-section1></app-section1>
+
+  <app-starwarthree></app-starwarthree>
+
+
+  <app-gallery></app-gallery>
+
+  <!-- Cards -->
+  <app-cardsection></app-cardsection>
+  <div class="fixed bottom-5 right-5 z-20">
+
+    <app-nuestrobot titulo="🤖 ¡Hola Humano!"
+      [descripcion]="'¿Tienes alguna duda, un problema técnico, o necesitas ayuda con una migración?<br/>¡Síguenos en nuestras redes sociales para estar al tanto de todo!<br/>Si el problema persiste, escríbenos directamente a nuestro WhatsApp para asistencia personalizada.'">
+    </app-nuestrobot>
+  </div>
+
+</div>

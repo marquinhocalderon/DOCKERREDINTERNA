@@ -1,0 +1,35 @@
+<div *ngIf="mostrarModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 dark:bg-black/70">
+  <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl max-w-md w-full p-6 relative">
+    
+    <!-- Botón cerrar -->
+    <button (click)="cerrarModal()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+      ✕
+    </button>
+
+    <!-- Contenido -->
+    <div class="text-center">
+      <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-yellow-100 dark:bg-yellow-800">
+        ⚠️
+      </div>
+      <h2 class="mt-4 text-xl font-semibold text-gray-800 dark:text-gray-100">
+        ¡Atención! Tu plan está por expirar
+      </h2>
+
+      <p class="mt-2 text-gray-600 dark:text-gray-400">
+        En pocos días tu suscripción llegará a su fin. Renueva ahora y evita interrupciones en tu cuenta.
+      </p>
+
+  <!--     <p *ngIf="mensajeMarketing" class="mt-2 text-indigo-600 dark:text-indigo-400 font-medium">
+        {{ mensajeMarketing }}
+      </p> -->
+    </div>
+
+    <!-- Botones -->
+    <div class="mt-6 flex justify-center gap-3">
+      <button (click)="cerrarModal()" 
+              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+        Entendido
+      </button>
+    </div>
+  </div>
+</div>

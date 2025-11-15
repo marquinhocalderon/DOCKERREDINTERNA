@@ -1,0 +1,5 @@
+tunnel: beb0b1e9-41d2-4609-b0e2-ed7daa9edae9
+    credentials-file: ./enchufe07-credentials.json
+    
+    ingress:
+      - service: http_status:404

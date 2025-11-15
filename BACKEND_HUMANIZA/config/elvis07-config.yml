@@ -1,0 +1,5 @@
+tunnel: 13a5792d-e72c-42ff-935f-3de57bc7bf88
+credentials-file: ./elvis07-credentials.json
+
+ingress:
+  - service: http_status:404

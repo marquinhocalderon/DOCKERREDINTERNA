@@ -1,0 +1,31 @@
+<div class="flex flex-col gap-6">
+
+  <div>
+    <p>Petición por minuto: {{ peticionporminuto }}</p>
+    <p>Petición por día: {{ peticion_dia }}</p>
+  </div>
+
+  <div>
+    @if (!loading) {
+      <p-select 
+        [options]="planes" 
+        [(ngModel)]="planseleccionado" 
+        optionLabel="name" 
+        placeholder="Seleccione el plan" 
+        class="w-full" />
+    } @else {
+      <p-button disabled icon="pi pi-spin pi-spinner" label="Actualizando información..." class="full-width-btn" />
+    }
+  </div>
+
+
+  <div class="absolute bottom-5 right-5 flex gap-2">
+    <p-button (click)="cerraMOdal()" icon="pi pi-times" label="Cancelar" text />
+
+    <p-button 
+      (click)="enviarDatos()" 
+      icon="pi pi-check" 
+      label="Guardar" 
+      [disabled]="loading" />
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="main-container">
+    <p-toast />
+
+    <!-- Sección izquierda (solo visible en PC) -->
+    <div class="image-section">
+        <!--             <app-floating-configurator />
+ -->
+        <img src="img/logolight.png" alt="logo" />
+
+    </div>
+
+    <!-- Sección derecha (visible siempre) -->
+    <div class="login-section">
+        <div class="login-container">
+            <div class="flex justify-center">
+                <!--
+                                <img src="img/logoinsupan.jpeg" alt="Logo INSUPAN ORIENTE">
+                -->
+            </div>
+
+            <div class="login-header">
+                <h1>HUMANI<span>BOT</span></h1>
+                <h2>Registrarse</h2>
+                <p class="text-white dark:text-white" style="font-style: italic; margin-top: 0.5rem;">
+  ¡Solo un paso más! Ayúdanos a completar tu perfil con algunos datos.
+</p>
+
+            </div>
+
+            <div class="login-form">
+
+                <div class="form-group">
+                    <label style="color: white">Correo Electronico</label>
+                    <input disabled (input)="agarrar_el_valor_formulario($event, 'email')" [value]="datos.email" (keydown.enter)="registrarNuevoCliente()"
+                        placeholder="Ingrese su Correo Electronico" required type="text" class="dark:text-white">
+
+                </div>
+
+                <div class="form-group">
+                    <label style="color: white">Nombre Completo</label>
+                    <input disabled (input)="agarrar_el_valor_formulario($event, 'nombre')" [value]="datos.nombre" (keydown.enter)="registrarNuevoCliente()"
+                        placeholder="Ingrese su nombre completo" required type="text" class="dark:text-white">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label style="color: white">Usuario</label>
+                    <input (input)="agarrar_el_valor_formulario($event, 'usuario')" (keydown.enter)="registrarNuevoCliente()"
+                        placeholder="Ingrese su usuario" required type="text" class="dark:text-white">
+
+                </div>
+
+                <div class="form-group">
+                    <div class="flex justify-between">
+                        <label style="color: white">Contraseña</label>
+                        <label (click)="verPassword = !verPassword" style="color: white; cursor: pointer">
+                            {{ verPassword ? 'Ocultar Password' : 'Ver Password' }}
+                        </label>
+                    </div>
+                    <input (input)="agarrar_el_valor_formulario($event, 'password')" (keydown.enter)="registrarNuevoCliente()"
+                        [type]="verPassword ? 'text' : 'password'" placeholder="Ingrese su contraseña"
+                        class="dark:text-white" required />
+                </div>
+
+
+                <div class="options">
+                    <!--                    <label class="remember-me">
+                                            <input type="checkbox"> Recordar sesión
+                                        </label>
+                                        <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>-->
+                </div>
+
+                <button [disabled]="loading" (click)="registrarNuevoCliente()" class="login-button">
+  <ng-container *ngIf="loading; else textoBoton">
+    <div class="flex gap-2 justify-center items-center">
+      <div class="w-6 h-6 border-4 border-blue-100 rounded-full loader"></div>
+    </div>
+  </ng-container>
+  <ng-template #textoBoton>
+    Continuar
+  </ng-template>
+</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

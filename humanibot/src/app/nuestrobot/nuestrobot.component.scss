@@ -1,0 +1,143 @@
+.modelViewPort {
+    perspective: 1000px;
+    width: 8rem;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eva {
+    --EVA-ROTATION-DURATION: 4s;
+    transform-style: preserve-3d;
+    animation: subtleFloat var(--EVA-ROTATION-DURATION) ease-in-out infinite alternate;
+    transition: transform 0.3s ease-out;
+}
+
+.head {
+    position: relative;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 48% 53% 45% 55% / 79% 79% 20% 22%;
+    background: linear-gradient(to right, white 45%, gray);
+    transition: transform 0.15s ease-out;
+}
+
+.eyeChamber {
+    width: 3.6rem;
+    height: 2rem;
+    position: relative;
+    left: 50%;
+    top: 55%;
+    border-radius: 45% 53% 45% 48% / 62% 59% 35% 34%;
+    background-color: #0c203c;
+    box-shadow: 0px 0px 2px 2px white, inset 0px 0px 0px 2px black;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+}
+
+.eye {
+    width: 1rem;
+    height: 1.2rem;
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+}
+
+.eye:first-child {
+    left: 10px;
+    top: 50%;
+    background: repeating-linear-gradient(65deg, #9bdaeb 0px, #9bdaeb 1px, white 2px);
+    box-shadow: inset 0px 0px 5px #04b8d5, 0px 0px 15px 1px #0bdaeb;
+    transform: translate(0, -50%) rotate(-65deg);
+}
+
+.eye:nth-child(2) {
+    right: 10px;
+    top: 50%;
+    background: repeating-linear-gradient(-65deg, #9bdaeb 0px, #9bdaeb 1px, white 2px);
+    box-shadow: inset 0px 0px 5px #04b8d5, 0px 0px 15px 1px #0bdaeb;
+    transform: translate(0, -50%) rotate(65deg);
+}
+
+/* Parpadeo */
+.eye.blink {
+    height: 0.1rem;
+    opacity: 0.5;
+}
+
+.body {
+    box-shadow: 0px 20px 40px #0c203c !important;
+    width: 5rem;
+    height: 6rem;
+    margin-top: 0.3rem;
+    border-radius: 47% 53% 45% 55% / 12% 9% 90% 88%;
+    background: linear-gradient(to right, white 35%, gray);
+    position: relative;
+}
+
+.hand {
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 1.6rem;
+    height: 4rem;
+    border-radius: 40%;
+    background: linear-gradient(to left, white 15%, gray);
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.25);
+    transform: rotateY(55deg) rotateZ(10deg);
+}
+
+.hand:first-child {
+    animation: leftHandMove var(--EVA-ROTATION-DURATION) ease-in-out infinite alternate;
+}
+
+.hand:nth-child(2) {
+    left: 90%;
+    background: linear-gradient(to right, white 15%, gray);
+    transform: rotateY(55deg) rotateZ(-10deg);
+    animation: rightHandMove var(--EVA-ROTATION-DURATION) ease-in-out infinite alternate;
+}
+
+/* Animaciones */
+@keyframes subtleFloat {
+    0% {
+        transform: translateY(0px) rotateY(-5deg);
+    }
+
+    50% {
+        transform: translateY(-3px) rotateY(0deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotateY(5deg);
+    }
+}
+
+@keyframes leftHandMove {
+    0% {
+        transform: rotateY(55deg) rotateZ(10deg);
+    }
+
+    50% {
+        transform: rotateY(50deg) rotateZ(15deg);
+    }
+
+    100% {
+        transform: rotateY(45deg) rotateZ(8deg);
+    }
+}
+
+@keyframes rightHandMove {
+    0% {
+        transform: rotateY(55deg) rotateZ(-10deg);
+    }
+
+    50% {
+        transform: rotateY(60deg) rotateZ(-15deg);
+    }
+
+    100% {
+        transform: rotateY(65deg) rotateZ(-8deg);
+    }
+}

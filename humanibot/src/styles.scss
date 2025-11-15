@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files2 */
+@use './tailwind.css';
+@use './assets/layout/layout.scss';
+@use 'primeicons/primeicons.css';
+@use './assets/demo/demo.scss';
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* HECTOR ESTUBO INSANO*/
+.p-disabled {
+  opacity: 1 !important
+}
+
+ .titulo {
+      font-family: 'Pacifico', cursive;
+    }
+
+    body {
+  overflow-x: hidden;
+}
